@@ -1,0 +1,19 @@
+<div>
+    <div>    
+      <h1>Craftify</h1>
+      <h2>{{title}}</h2>
+      <span *ngIf="isavailable">
+        Product is available
+     </span>
+     <select>
+       <option *ngFor="let i of months">{{i}}</option>
+     </select>
+    </div>  
+    <div>
+      <h3>welcome {{name}}</h3>
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="name">
+      <button (click)="buttonClicked()">Click</button>
+    </div>  
+  </div>
