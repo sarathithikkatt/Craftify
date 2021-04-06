@@ -1,2 +1,14 @@
 <app-navbartop></app-navbartop>
-<app-home></app-home>
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col">
+            <textarea name="text" cols="24" rows="5">
+            Add multiple lines of text here and watch the scrollbars grow...
+            </textarea>
+        </div>
+        <div class="col-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

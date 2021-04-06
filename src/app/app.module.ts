@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbartopComponent } from './navbartop/navbartop.component';
 import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbartopComponent,
-    HomeComponent
+    HomeComponent,
+    AboutusComponent,
+    LoginComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
