@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TutorialsComponent } from './tutorials/tutorials.component';
+import { AllComponent } from './all/all.component';
+import { DrawingComponent } from './drawing/drawing.component';
+import { DiyComponent } from './diy/diy.component';
+import { WoodworkComponent } from './woodwork/woodwork.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +24,17 @@ import { FooterComponent } from './footer/footer.component';
     AboutusComponent,
     LoginComponent,
     FooterComponent,
+    TutorialsComponent,
+    AllComponent,
+    DrawingComponent,
+    DiyComponent,
+    WoodworkComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

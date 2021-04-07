@@ -1,19 +1,13 @@
-<div>
-    <div>    
-      <h1>Craftify</h1>
-      <h2>{{title}}</h2>
-      <span *ngIf="isavailable">
-        Product is available
-     </span>
-     <select>
-       <option *ngFor="let i of months">{{i}}</option>
-     </select>
-    </div>  
-    <div>
-      <h3>welcome {{name}}</h3>
+<div class="main">
+  <div class="left">
+    <div class="list-group list-group-flush list-group-item-light">
+      <a routerLink="" class="list-group-item list-group-item-action">All</a>
+      <a routerLink="drawing" class="list-group-item list-group-item-action">Drawing</a>
+      <a routerLink="diy" class="list-group-item list-group-item-action">DIY</a>
+      <a routerLink="woodwork" class="list-group-item list-group-item-action">Wood Work</a>      
     </div>
-    <div>
-      <input type="text" [(ngModel)]="name">
-      <button (click)="buttonClicked()">Click</button>
-    </div>  
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+    </div>
   </div>
