@@ -15,6 +15,7 @@ import { AllComponent } from './all/all.component';
 import { DrawingComponent } from './drawing/drawing.component';
 import { DiyComponent } from './diy/diy.component';
 import { WoodworkComponent } from './woodwork/woodwork.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { WoodworkComponent } from './woodwork/woodwork.component';
     DrawingComponent,
     DiyComponent,
     WoodworkComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

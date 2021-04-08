@@ -1,7 +1,15 @@
-
+.containermain{
+    height: 100%;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.textcontainer{
+    width: 100%;
+    text-align: start;
+}
 .login-box {
-    position: absolute;
-    margin: 25%;
+    margin: 0 auto;
     height: 50%;
     background: #1A2226;
     text-align: center;
