@@ -15,6 +15,8 @@ import { DiyComponent } from './diy/diy.component';
 import { WoodworkComponent } from './woodwork/woodwork.component';
 import { SignupComponent } from './signup/signup.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { HttpClientModule } from '@angular/common/http';
+// import {AuthService} from './auth.service'
 
 @NgModule({
   declarations: [
@@ -29,15 +31,17 @@ import { MarketplaceComponent } from './marketplace/marketplace.component';
     WoodworkComponent,
     SignupComponent,
     MarketplaceComponent,
-    ReactiveFormsModule
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  // providers: [AuthService],
+  providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
