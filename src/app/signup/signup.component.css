@@ -1,4 +1,6 @@
 .container{
     position: relative;
     vertical-align: middle;
+    margin-top: 5%;
+    padding-bottom: 5%;
 }

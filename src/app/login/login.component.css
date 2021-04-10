@@ -21,8 +21,6 @@
     font-size: 80px;
     line-height: 100px;
     background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
  
 .login-title {
@@ -50,7 +48,7 @@ input[type=text] {
     outline: 0;
     margin-bottom: 20px;
     padding-left: 0px;
-    color: #ECF0F5;
+    /* color: #ECF0F5; */
 }
  
 input[type=password] {
@@ -86,9 +84,6 @@ input:focus {
     box-shadow: 0 0 0;
 }
  
-label {
-    margin-bottom: 0px;
-}
  
 .form-control-label {
     font-size: 10px;

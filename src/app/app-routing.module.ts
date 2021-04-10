@@ -6,8 +6,8 @@ import { DiyComponent } from './diy/diy.component';
 import { DrawingComponent } from './drawing/drawing.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { SignupComponent } from './signup/signup.component';
-import { TutorialsComponent } from './tutorials/tutorials.component';
 import { WoodworkComponent } from './woodwork/woodwork.component';
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {path:"login",component:LoginComponent},
   {path:"aboutus",component:AboutusComponent},
-  {path:"tutorials",component:TutorialsComponent},
+  {path:"marketplace",component:MarketplaceComponent},
   {path:"login/signup",component:SignupComponent}
   ];
 
