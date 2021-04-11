@@ -1,23 +1,19 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/craftify');
-<<<<<<< Updated upstream
 
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    postid : Number,
     postname : String,
     description : String,
-    profileid : String,
     image : String,
-    postdate : Date,
 });
 
 var Feeddata = mongoose.model('Feed',PostSchema);
 
 mongoose.model.exports = Feeddata;
-=======
+
 const db = mongoose.connection;
 db.once('error',(err)=>{
     console.log(err);
@@ -57,4 +53,3 @@ const postSchema = new Schema({
 var postdata = mongoose.model('post',postSchema);
 
 mongoose.model.exports = postdata;
->>>>>>> Stashed changes

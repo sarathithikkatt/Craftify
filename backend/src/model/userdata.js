@@ -4,9 +4,7 @@ mongoose.connect('mongodb://localhost:27017/craftify');
 
 const Schema = mongoose.Schema;
 
-var UserSchema = new Schema({   
-    usercode : String,
-    userid : Number,
+var UserSchema = new Schema({
     username : String,
     useremail:String,
     userpass:String,
