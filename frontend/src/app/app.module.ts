@@ -16,6 +16,7 @@ import { WoodworkComponent } from './woodwork/woodwork.component';
 import { SignupComponent } from './signup/signup.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FeedComponent } from './feed/feed.component';
 // import {AuthService} from './auth.service'
 
 @NgModule({
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     WoodworkComponent,
     SignupComponent,
     MarketplaceComponent,
+    FeedComponent,
   ],
   imports: [
     HttpClientModule,
