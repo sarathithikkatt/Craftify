@@ -2,15 +2,30 @@ const express = require('express');
 const app = new express();
 
 
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 3000;
 
 const cors = require('cors');
-app.user(cors());
+app.use(cors());
 
+email="admin@gmail.com"
+password="123456"
+
+app.post('/login',(req,res)=>{
+    let userData = req.body
+
+    if(!username){
+        res.status(401).send("Invalid username")
+    }else
+    if (password !== userData.password){
+        res.status(401).send('Inalid Password')
+    }else {
+        res.send(200).send()
+    }
+});
 const fs = require("fs");
 
-const upload = require("express-ileupload");
-app.use(upload());
+// const upload = require("express-fileupload");
+// app.use(upload());
 
 // var bodyparser = require ('body-parser');
 // app.use(bodyparser.json())

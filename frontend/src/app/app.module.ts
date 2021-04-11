@@ -17,6 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedComponent } from './feed/feed.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FeedComponent } from './feed/feed.component';
     SignupComponent,
     MarketplaceComponent,
     FeedComponent,
+    
   ],
   imports: [
     HttpClientModule,
@@ -42,7 +44,7 @@ import { FeedComponent } from './feed/feed.component';
     ReactiveFormsModule
   ],
   
-  providers:[],
+  providers:[AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -21,7 +21,6 @@ db.once('error',(err)=>{
 db.on('open',()=>{
     console.log("Post DB is connected");
 })
-const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
     postid : {
