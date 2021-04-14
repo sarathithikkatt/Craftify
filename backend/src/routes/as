@@ -1,0 +1,60 @@
+const express = require("express");
+
+const postRouter = express.Router();
+
+const Postdata = require("../model/Postdata");
+
+
+// designs
+accountRouter.get("/",(req,res) =>
+{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
+
+    Accountdata.find()
+    .then(function(accounts)
+    {
+        res.send(accounts);
+    });
+});
+
+
+// add new post
+accountRouter.post("/addpost",(req,res)=>{
+
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
+
+    console.log(req.body);
+
+    // new post
+    var pst = {
+        postname : req.body.name,
+        description : req.body.desc,
+        image : req.body.image,
+    }
+
+    // pass to PostSchema
+    var post = Postdata(pst);
+    post.save();
+    res.send("success");
+});
+
+// search post
+// postRouter.get("/searchaccount/:email",(req,res)=>{
+
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
+
+//     const email = req.params.email;
+
+//     Postdata.findOne({email : email})
+//     .then(function(post){
+//         res.send(post);
+//         console.log(post);
+//     });
+
+// });
+
+
+module.exports = postRouter;

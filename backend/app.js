@@ -7,6 +7,9 @@ const port = process.env.PORT || 3000;
 const cors = require('cors');
 app.use(cors());
 
+var bodyparser = require("body-parser");
+app.use(bodyparser.json());
+
 email="admin@gmail.com"
 password="123456"
 
@@ -24,11 +27,6 @@ app.post('/login',(req,res)=>{
 });
 const fs = require("fs");
 
-// const upload = require("express-fileupload");
-// app.use(upload());
-
-// var bodyparser = require ('body-parser');
-// app.use(bodyparser.json())
 
 app.use(function(req,res,next){
     res.header("Access-Control_Allow-Origin","*");
@@ -39,8 +37,8 @@ app.use(function(req,res,next){
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-const Postdata = require("./src/model/postdata");
-const Productdata = require("./src/model/productdata");
+const Postdata = require("./src/model/Postdata");
+const Productdata = require("./src/model/product");
 const Userdata = require("./src/model/userdata");
 
 
@@ -107,31 +105,31 @@ app.post("/add",(req,res)=>{
 
 
 
-app.post("/addpost",(req,res)=>{
+// app.post("/addpost",(req,res)=>{
 
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
     
-    var pst={
-        postname : req.body.name,
-        description : req.body.desc,
-        image : req.body.image,
-    }
+//     var pst={
+//         postname : req.body.name,
+//         description : req.body.desc,
+//         image : req.body.image,
+//     }
 
-    console.log(req.body);
+//     console.log(req.body);
 
-    if(reqfiles){
+//     if(reqfiles){
 
-        var file = req.file.image;
-        var filename = req.files.image.name;
-    }
+//         var file = req.file.image;
+//         var filename = req.files.image.name;
+//     }
 
-    var post = Postdata(pst);
+//     var post = Postdata(pst);
 
 
-    post.save();
+//     post.save();
 
-});
+// });
 
 
 app.get("/posts/:id",(req,res)=>{
@@ -141,7 +139,7 @@ app.get("/posts/:id",(req,res)=>{
 
     const id = req.params.id;
 
-    Bookdata.findOne({_id : id})
+    Postdata.findOne({_id : id})
     .then(function(post){
 
         res.send(post);
@@ -176,8 +174,27 @@ app.post("/updatepost/:id",(req,res)=>{
         });
 
         
-    });
+    });   
 
 });
 
-app.listen(port);
+app.get("/",(req,res)=>{
+    res.send("VANNU")
+});
+
+// add new design
+// app.get("/addpost",(req,res)=>
+// {   
+//     var pst={
+//         postname : "WOODWORK Post name 2",
+//         description : "WOODWORK Description 2",
+//         image : "https://i.pinimg.com/originals/30/31/09/303109711ef0efb0505077bad2ead5b5.jpg",
+//         category : "WOODWORK",
+//     }
+
+//     var post = Postdata(pst);
+//     post.save();
+//     res.send("success");
+// });
+
+app.listen(3000);

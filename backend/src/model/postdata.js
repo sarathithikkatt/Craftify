@@ -23,10 +23,6 @@ db.on('open',()=>{
 })
 
 const postSchema = new Schema({
-    postid : {
-        type:Number,
-        required:false
-            },
     postname : {
         type:String,
         required:true
@@ -35,20 +31,18 @@ const postSchema = new Schema({
         type:String,
         required:true
             },
-    profileid : {
-        type:String,
-        required:false
-            },
     image : {
-        type:Buffer,
+        type:String,
         required:true
             },
-    postdate : {
-        type:Date,
-        required:false
-    },
+    category : {
+        type:String,
+        required:true
+    }
 });
 
-var postdata = mongoose.model('post',postSchema);
+var Postdata = mongoose.model('post',postSchema);
 
-mongoose.model.exports = postdata;
+// mongoose.model.exports = Postdata;
+
+module.exports=Postdata;
