@@ -1,8 +1,11 @@
 const express = require('express');
 const app = new express();
 
+// const mongoose = require('mongoose');
 
-const port = process.env.PORT || 3000;
+// mongoose.connect('mongodb://localhost:3000/craftify');
+
+const port = process.env.PORT || 4000;
 
 const cors = require('cors');
 app.use(cors());
@@ -13,6 +16,7 @@ app.use(bodyparser.json());
 email="admin@gmail.com"
 password="123456"
 
+//login
 app.post('/login',(req,res)=>{
     let userData = req.body
 
@@ -42,7 +46,7 @@ const Productdata = require("./src/model/product");
 const Userdata = require("./src/model/userdata");
 
 
-
+//feed
 app.get("/feed",(req,res)=>{
 
     res.header("Access-Control-Allow-Origin","*");
@@ -60,47 +64,29 @@ app.get("/feed",(req,res)=>{
 });
 
 
-
-app.get("/authors",(req,res)=>{
-
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
-
-
-    Authordata.find()
-    .then(function(authors){
-
-        res.send(authors);
-        console.log(authors);
-    
-    });
-
-});
-
-
 //adding account
-app.post("/add",(req,res)=>{
+app.post("/addaccount",(req,res)=>{
 
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
+    // res.header("Access-Control-Allow-Origin","*");
+    // res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
 
     console.log(req.body);
 
     // new account
     var usr = {
-        username : req.body.name,
-        useremail : req.body.email,
-        userpass : req.body.password,
-        isadmin : false,
-        posts : []
+        fullname : req.body.fullname,
+        userphone : req.body.userphone,
+        email : req.body.email,
+        password : req.body.password,
+        // isadmin : false,
+        // posts : []
     }
 
 
     //pass to userschema
     var user = Userdata(usr);
-
-
     user.save();
+    res.send("success");
 });
 
 
@@ -131,7 +117,7 @@ app.post("/add",(req,res)=>{
 
 // });
 
-
+//search post
 app.get("/posts/:id",(req,res)=>{
 
     res.header("Access-Control-Allow-Origin", "*");
@@ -147,7 +133,7 @@ app.get("/posts/:id",(req,res)=>{
     });
 
 });
-
+//edit post
 app.post("/updatepost/:id",(req,res)=>{
 
     const id = req.params.id;
@@ -197,4 +183,4 @@ app.get("/",(req,res)=>{
 //     res.send("success");
 // });
 
-app.listen(3000);
+app.listen(4000);

@@ -4,3 +4,45 @@
     margin-top: 5%;
     padding-bottom: 5%;
 }
+.form{
+    border: 1px solid #7c7a7a;
+    border-radius: 1em;
+    /* margin-top: 5%; */
+    margin-left: 25%;
+    /* margin-bottom: 5%; */
+}
+
+.page{
+    background-color:  rgb(250, 226, 250);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.card-header{
+    color: white;
+    font-weight: bold;
+}
+
+#signup-btn{
+    width: 15em;
+    height: 45px;
+    color: rgb(41, 102, 182);
+    border-radius: 5em;
+    border: 1px solid rgb(25, 101, 172);
+    margin-left: 28%;
+}
+
+#signup-btn:hover{
+    background-color: rgb(23, 150, 182);
+    color: white;
+    border: 1px solid rgb(23, 150, 182);
+}
+
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.icons{
+    margin-left: 29%;
+}

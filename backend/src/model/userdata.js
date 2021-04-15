@@ -6,10 +6,10 @@ const Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
     username : String,
-    useremail:String,
-    userpass:String,
-    isadmin : Boolean,
-    posts : Array,
+    userphone : String,
+    email:String,
+    password:String,
+    // isadmin : Boolean,
 });
 
 var Userdata = mongoose.model('user', UserSchema);

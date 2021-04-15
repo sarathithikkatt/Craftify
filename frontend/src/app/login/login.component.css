@@ -125,3 +125,12 @@ input:focus {
 .loginbttm {
     padding: 0px;
 }
+
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.icons{
+    margin-left: 29%;
+}

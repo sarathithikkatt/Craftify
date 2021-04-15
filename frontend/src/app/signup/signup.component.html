@@ -1,22 +1,52 @@
 <div class="container">
-    <form class="needs-validation" novalidate>
+    <form method="POST" class="text-center card form bg-light p-5 col-md-6" (ngSubmit)="addAccount()">
+      <p class="h3">Sign Up</p>
         <br>
             <div class="form-group">
               <label for="inputname">Full Name</label>
-              <input type="text" class="form-control" id="inputname" placeholder="First Name">
+              <input type="text" class="form-control" name="fullname" [(ngModel)]="accountItem.fullname" id="inputname" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="imputnumber">Phone Number</label>
+                <input type="number" class="form-control" name="userphone" [(ngModel)]="accountItem.userphone" id="imputnumber" placeholder="Phone Number">
             </div>
         <div class="form-group">
             <label for="imputemail">Email</label>
-            <input type="email" class="form-control" id="imputemail" placeholder="Email">
+            <input type="email" class="form-control" name="email" [(ngModel)]="accountItem.email" id="imputemail" placeholder="Email">
         </div>
         <div class="form-group">
           <label for="inputpassword">Password</label>
-          <input type="password" class="form-control" id="inputpassword" placeholder="Password">
+          <input type="password" class="form-control" name="password" [(ngModel)]="accountItem.password" id="inputpassword" placeholder="Password">
         </div>
         <div class="form-group">
           <label for="inputpassword2">Retype Password</label>
-          <input type="password" class="form-control" id="inputpassword2" placeholder="Retype Password">
+          <input type="password" class="form-control"  id="inputpassword2" placeholder="Retype Password">
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+        
+    <!-- Social register -->
+    <p>or sign up with:</p>
+
+    <div class="row icons">
+    <a type="button" class="light-blue-text mx-2">
+      <img src="../../assets/image/logos/twitter.png" alt="twitter">
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+      <img src="../../assets/image/logos/facebook.png" alt="facebook">
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+      <img src="../../assets/image/logos/insta.png" alt="instagram">
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+      <img src="../../assets/image/logos/linkedin.png" alt="linkedin">
+    </a>
+    </div>
+
+    <hr>
+
+    <!-- Terms of service -->
+    <p>By clicking
+      <em>Sign up</em> you will be agreeing to our
+      <a href="" target="_blank">terms of service</a></p>
       </form>
 </div>

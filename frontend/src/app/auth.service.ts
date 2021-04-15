@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 loginUser(user:any){
-  return this.http.post("http://localhost:3000/login",user)
+  return this.http.post("http://localhost:4000/login",user)
   .subscribe((data)=>{
     console.log("success")
   })
