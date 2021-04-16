@@ -18,6 +18,7 @@ import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedComponent } from './feed/feed.component';
 import { AuthService } from './auth.service';
+import { PostcardComponent } from './postcard/postcard.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AuthService } from './auth.service';
     SignupComponent,
     MarketplaceComponent,
     FeedComponent,
+    PostcardComponent,
     
   ],
   imports: [

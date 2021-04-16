@@ -47,19 +47,16 @@ const Userdata = require("./src/model/userdata");
 
 
 //feed
-app.get("/feed",(req,res)=>{
+app.get("/feed/all",(req,res)=>{
 
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
-
+    // res.header("Access-Control-Allow-Origin","*");
+    // res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
 
     Postdata.find()
     .then(function(posts){
-
         res.send(posts);
-
-
     });
+
 
 });
 
