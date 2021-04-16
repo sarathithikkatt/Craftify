@@ -44,15 +44,16 @@ app.use(express.urlencoded({extended:true}));
 const Postdata = require("./src/model/Postdata");
 const Productdata = require("./src/model/product");
 const Userdata = require("./src/model/userdata");
+const Feeddata = require('./src/model/Postdata');
 
 
 //feed
-app.get("/feed/all",(req,res)=>{
+app.get("/feed",(req,res)=>{
 
-    // res.header("Access-Control-Allow-Origin","*");
-    // res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
 
-    Postdata.find()
+    Feeddata.find()
     .then(function(posts){
         res.send(posts);
     });
@@ -115,14 +116,14 @@ app.post("/addaccount",(req,res)=>{
 // });
 
 //search post
-app.get("/posts/:id",(req,res)=>{
+app.get("/posts/:category",(req,res)=>{
 
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
 
-    const id = req.params.id;
+    const category = req.params.category;
 
-    Postdata.findOne({_id : id})
+    Postdata.findOne({category : category})
     .then(function(post){
 
         res.send(post);

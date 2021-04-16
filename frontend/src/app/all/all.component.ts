@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PostService} from '../post.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-all',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all.component.css']
 })
 export class AllComponent implements OnInit {
+  
+  posts = [{
+    postname : '',
+    description : '',
+    image : '',
+    category : '',
+  }]
 
-  constructor() { }
+  constructor(private postservice:PostService,private router:Router) { }
 
   ngOnInit(): void {
-  }
-
+    this.postservice.getPost().subscribe((data)=>{
+      this.posts=JSON.parse(JSON.stringify(data));
+  })
+}
 }
